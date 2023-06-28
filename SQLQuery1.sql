@@ -36,9 +36,10 @@ constraint matricula foreign key (matricula) references estudiantes(matricula) o
 constraint id_carrera foreign key (id_carrera) references carrera(id_carrera) on update cascade on delete no action,
 )
 create table est_cursos (
-matricula int foreign key references estudiantes(matricula) not null,
+matricula int,
 id_curso int,
 primary key (id_curso),
+constraint matricula foreign key (matricula) references estudiantes(matricula) on update cascade on delete no action,
 constraint id_curso foreign key (id_curso) references cursos(id_curso) on update cascade on delete no action,
 )
 create table est_tlf (
